@@ -1,0 +1,82 @@
+.main {
+  display: flex;
+  gap: 306px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  color: var(--light-light-100);
+}
+
+.form {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.divForm {
+  display: flex;
+  min-width: 348px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  opacity: 0.8;
+}
+
+.labelForm {
+  color: var(--light-light-400);
+}
+
+.labelInput {
+  width: 100%;
+  display: flex;
+  padding: 12px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+
+  border-radius: 8px;
+  border: none;
+  background: var(--dark-dark-900);
+}
+
+.createAccountButton {
+  display: flex;
+  padding: 12px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+
+  border-radius: 5px;
+  background: var(--tints-tomato-100);
+
+  color: var(--light-light-100);
+  text-align: center;
+}
+
+.alreadyAccountButton {
+  margin-top: 32px;
+  color: var(--light-light-100);
+  text-align: center;
+}
+
+@media screen and (max-width: 1100px) {
+  .main {
+    flex-direction: column;
+    gap: 4.5625rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .divForm {
+    min-width: 0;
+  }
+}

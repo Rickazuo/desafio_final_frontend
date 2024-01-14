@@ -1,0 +1,13 @@
+.main {
+  padding: 64px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+
+  border-radius: 16px;
+  background: var(--dark-dark-700);
+
+  color: var(--light-light-100);
+  text-align: center;
+}
