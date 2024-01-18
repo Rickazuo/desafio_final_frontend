@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 48rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1.5rem 7.6875rem;
+  justify-content: center;
+  background: var(--dark-dark-600);
+}
+.markBusinessFooter {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.copyright {
+  color: var(--light-light-200);
+}
