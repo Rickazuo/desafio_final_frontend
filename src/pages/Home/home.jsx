@@ -1,5 +1,10 @@
-import module from "./home.module.css";
+import Banner from "../../components/Banner/banner";
+import styles from "./home.module.css";
 
 export default function Home() {
-  return <main></main>;
+  return (
+    <main className={styles.main}>
+      <Banner />
+    </main>
+  );
 }

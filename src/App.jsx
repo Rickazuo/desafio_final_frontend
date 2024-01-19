@@ -12,7 +12,7 @@ function App() {
   return (
     <main>
       <Header />
-      <LoginAccount />
+      <Home />
       <Footer />
     </main>
   );

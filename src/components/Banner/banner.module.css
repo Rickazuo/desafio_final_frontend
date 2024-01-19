@@ -1,0 +1,43 @@
+.main {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 70rem;
+  height: 16.25rem;
+
+  border-radius: 0.5rem;
+  background: var(
+    --gradients-200,
+    linear-gradient(180deg, #091e26 0%, #00131c 100%)
+  );
+}
+
+.imgBanner {
+  position: absolute;
+  bottom: 0;
+}
+
+.descriptionBanner {
+  position: absolute;
+  right: 48px;
+}
+
+.descriptionBanner :nth-child(1) {
+  color: var(--light-light-300);
+}
+
+.descriptionBanner :nth-child(2) {
+  color: var(--light-light-300);
+}
+
+@media screen and (max-width: 1150px) {
+  .main {
+    width: auto;
+    height: auto;
+  }
+
+  .imgBanner {
+    position: relative;
+    width: 50px;
+  }
+}
