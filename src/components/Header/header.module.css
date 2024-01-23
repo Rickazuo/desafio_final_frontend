@@ -81,3 +81,18 @@
   outline: none;
   transform: scale(1.1);
 }
+
+@media screen and (max-width: 1300px) {
+  .main {
+    gap: 0.5rem;
+    padding: 1rem 0rem;
+  }
+
+  .textBanner {
+    font-size: 1.2rem;
+  }
+
+  .orderButton {
+    padding: 0.2rem;
+  }
+}

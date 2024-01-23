@@ -2,12 +2,11 @@
   display: flex;
   width: 100%;
   align-items: center;
-  gap: 48rem;
   position: absolute;
   bottom: 0;
   left: 0;
   padding: 1.5rem 7.6875rem;
-  justify-content: center;
+  justify-content: space-between;
   background: var(--dark-dark-600);
 }
 .markBusinessFooter {
@@ -18,4 +17,10 @@
 
 .copyright {
   color: var(--light-light-200);
+}
+
+@media screen and (max-width: 1300px) {
+  .footer {
+    padding: 1rem 0.5rem;
+  }
 }

@@ -32,12 +32,37 @@
 
 @media screen and (max-width: 1150px) {
   .main {
-    width: auto;
-    height: auto;
+    max-width: 40rem;
+    max-height: 10rem;
   }
 
   .imgBanner {
-    position: relative;
-    width: 50px;
+    width: 20rem;
+    left: -5rem;
+  }
+
+  .descriptionBanner {
+    max-width: 30rem;
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .main {
+    max-width: 23rem;
+    max-height: 10rem;
+  }
+
+  .descriptionBanner {
+    max-width: 10rem;
+    right: 0px;
+  }
+
+  .descriptionBanner :nth-child(1) {
+    font-size: 1.5rem;
+  }
+
+  .descriptionBanner :nth-child(2) {
+    font-size: 0.8rem;
   }
 }
