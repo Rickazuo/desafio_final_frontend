@@ -11,9 +11,9 @@ function App() {
 
   return (
     <main>
-      <Header />
+      {/* <Header /> */}
       <Home />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }
