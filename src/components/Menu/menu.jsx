@@ -4,8 +4,8 @@ import styles from "./menu.module.css";
 export default function Menu() {
   return (
     <main className={styles.menu}>
+      <p>Refeições</p>
       <div>
-        <p>Refeições</p>
         <div>
           <DishCards />
         </div>

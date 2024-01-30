@@ -16,6 +16,35 @@
   position: absolute;
   right: 1.125rem;
   top: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.likedButton:hover {
+  transform: scale(1.1);
+}
+
+.titleDish {
+  color: var(--light-light-300);
+  text-align: center;
+}
+
+.containerDish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.94rem;
+}
+
+.descriptionDish {
+  color: var(--light-light-400);
+  text-align: center;
+}
+
+.priceDish {
+  color: var(--tints-cake-200);
+  text-align: center;
 }
 
 .imgDish {
@@ -27,4 +56,48 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+}
+
+.footerDishCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 0.875rem;
+
+  color: var(--light-light-300);
+}
+
+.buttonQuantity {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+
+  font-size: larger;
+  font-weight: 700;
+}
+
+.buttonDish {
+  display: flex;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  border-radius: 0.3125rem;
+  background: var(--tints-tomato-100);
+
+  color: var(--light-light-100);
+  text-align: center;
 }

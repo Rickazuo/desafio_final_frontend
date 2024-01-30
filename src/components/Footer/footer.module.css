@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   align-items: center;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   padding: 1.5rem 7.6875rem;
