@@ -1,0 +1,36 @@
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.slideContainer {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.slide {
+  flex: 0 0 100%;
+  transition: transform 0.5s ease;
+}
+
+.active {
+  transform: translateX(0);
+}
+
+.prevButton,
+.nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.prevButton {
+  left: 0;
+}
+
+.nextButton {
+  right: 0;
+}
