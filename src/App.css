@@ -33,13 +33,6 @@
   --tints-cake-100: #065e7c;
 }
 
-body {
-  background: var(--dark-dark-400);
-  display: flex;
-  justify-content: center;
-  height: 100%;
-}
-
 .poppins-100-medium {
   font-size: 0.875rem;
   font-family: "Poppins";

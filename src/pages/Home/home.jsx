@@ -1,23 +1,20 @@
-import Banner from "../../components/Banner/banner";
+// import React, { useState } from "react";
 import Carousel from "../../components/Carousel/carousel";
-import Menu from "../../components/Menu/menu";
 import styles from "./home.module.css";
 
-const images = [
-  "https://picsum.photos/200",
-  "https://picsum.photos/100",
-  "https://picsum.photos/200",
-  "https://picsum.photos/200",
-  "https://picsum.photos/200",
-  "https://picsum.photos/200",
-  "https://picsum.photos/200",
-  "https://picsum.photos/200",
-];
-
 export default function Home() {
+  const images = [
+    "dish1.svg",
+    "dish2.svg",
+    "dish3.svg",
+    "dish4.svg",
+    "dish5.svg",
+    "dish6.svg",
+    "dish7.svg",
+  ];
+
   return (
     <main className={styles.main}>
-      <Banner />
       <Carousel images={images} />
     </main>
   );

@@ -1,41 +1,29 @@
 import React, { useState } from "react";
 import styles from "./carousel.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 
 export default function Carousel({ images }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
   return (
-    <main className={styles.carousel}>
-      <div className={styles.slideContainer}>
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`${styles.slide} ${
-              index === currentIndex ? styles.active : ""
-            }`}
-          >
-            <img src={image} alt={`Slide ${index}`} />
-          </div>
+    <div style={{ width: 900 }}>
+      <Swiper
+        pagination={{
+          clickable: true,
+        }}
+        slidesPerView={3}
+        navigation={true}
+        modules={[Navigation]}
+        className="mySwiper"
+        loop={true}
+      >
+        {images.map((image) => (
+          <SwiperSlide>
+            <img src={image} />
+          </SwiperSlide>
         ))}
-      </div>
-      <button onClick={prevSlide} className={styles.prevButton}>
-        Prev
-      </button>
-      <button onClick={nextSlide} className={styles.nextButton}>
-        Next
-      </button>
-    </main>
+      </Swiper>
+    </div>
   );
 }
