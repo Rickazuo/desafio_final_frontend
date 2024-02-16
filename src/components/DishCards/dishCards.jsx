@@ -3,7 +3,7 @@ import styles from "./dishCards.module.css";
 import heartIcon from "../../assets/heart.svg";
 import spaghettiGambe from "../../assets/spaghettiGambe.svg";
 
-export default function DishCards() {
+export default function DishCards({ title, description, img, liked }) {
   const [quantity, setQuantity] = useState(1);
 
   const handleIncrease = () => {
@@ -20,14 +20,14 @@ export default function DishCards() {
 
   return (
     <main className={styles.main}>
-      <img className={styles.likedButton} src={heartIcon} alt="heart icon" />
+      {liked && (
+        <img className={styles.likedButton} src={heartIcon} alt="heart icon" />
+      )}
       <div className={styles.containerDish}>
-        <img src={spaghettiGambe} alt="image of a dish" />
-        <p className={`${styles.titleDish} poppins-300-bold `}>
-          spaghettiGambe
-        </p>
+        <img className={styles.dishImg} src={img} alt="image of a dish" />
+        <p className={`${styles.titleDish} poppins-300-bold `}>{title}</p>
         <p className={`${styles.descriptionDish} roboto-smaller-regular`}>
-          Massa fresca com camarões e pesto.
+          {description}
         </p>
         <p className={`${styles.priceDish} roboto-biggest-regular`}>R$ XX,XX</p>
         <div className={styles.footerDishCard}>

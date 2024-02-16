@@ -4,8 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import DishCards from "../DishCards/dishCards";
 
-export default function Carousel({ images }) {
+export default function Carousel({ dishes }) {
   return (
     <div style={{ width: 900 }}>
       <Swiper
@@ -18,9 +19,14 @@ export default function Carousel({ images }) {
         className="mySwiper"
         loop={true}
       >
-        {images.map((image) => (
+        {dishes.map((item) => (
           <SwiperSlide>
-            <img src={image} />
+            <DishCards
+              title={item.title}
+              img={item.img}
+              description={item.description}
+              liked={item.liked}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
