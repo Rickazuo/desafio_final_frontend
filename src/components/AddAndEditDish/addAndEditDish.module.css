@@ -169,3 +169,25 @@
   border: none;
   filter: brightness(80%);
 }
+
+@media screen and (max-width: 850px) {
+  .main {
+    padding: 0rem 1.5rem;
+  }
+  .fieldsContainer {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .fieldImageContainer {
+    max-width: none;
+  }
+
+  .fieldPriceContainer {
+    max-width: none;
+  }
+
+  .selectButton {
+    max-width: none;
+  }
+}
