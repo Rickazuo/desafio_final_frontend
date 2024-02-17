@@ -10,7 +10,7 @@ function App() {
   return (
     <main>
       <Header />
-      <Home />
+      <CreateAccount />
       <Footer />
     </main>
   );

@@ -1,6 +1,13 @@
 .main {
   display: flex;
-  gap: 306px;
+  width: 100dvw;
+  height: 100dvh;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-dark-500);
+  gap: 19.125rem;
+
+  overflow-y: auto;
 }
 
 .container {
@@ -76,7 +83,16 @@
 }
 
 @media screen and (max-width: 500px) {
+  .main {
+    padding: 5rem 0rem 5rem 0rem;
+    justify-content: start;
+  }
+
   .divForm {
-    min-width: 0;
+    width: 100%;
+  }
+
+  .container {
+    height: 100%;
   }
 }

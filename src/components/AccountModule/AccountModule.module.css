@@ -1,5 +1,5 @@
 .main {
-  padding: 64px;
+  padding: 4rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -10,4 +10,11 @@
 
   color: var(--light-light-100);
   text-align: center;
+}
+
+@media screen and (max-width: 850px) {
+  .main {
+    background: var(--dark-dark-500);
+    padding: 0;
+  }
 }
