@@ -1,4 +1,5 @@
 // import React, { useState } from "react";
+import AddAndEditDish from "../../components/AddAndEditDish/addAndEditDish";
 import Carousel from "../../components/Carousel/carousel";
 import DishDetails from "../../components/DishDetails/dishDetails";
 import styles from "./home.module.css";
@@ -109,7 +110,8 @@ export default function Home() {
         {/* <Carousel dishes={dishes.meal} />
         <Carousel dishes={dishes.dessert} />
         <Carousel dishes={dishes.drink} /> */}
-        <DishDetails />
+        {/* <DishDetails /> */}
+        <AddAndEditDish />
       </div>
     </main>
   );
