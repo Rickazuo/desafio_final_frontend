@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./dishCards.module.css";
 import heartIcon from "../../assets/heart.svg";
-import spaghettiGambe from "../../assets/spaghettiGambe.svg";
+import fullHeartIcon from "../../assets/fullHeart.svg";
 
 export default function DishCards({ title, description, img, liked }) {
   const [quantity, setQuantity] = useState(1);
@@ -20,8 +20,10 @@ export default function DishCards({ title, description, img, liked }) {
 
   return (
     <main className={styles.main}>
-      {liked && (
+      {!liked ? (
         <img className={styles.likedButton} src={heartIcon} alt="heart icon" />
+      ) : (
+        <img className={styles.likedButton} src={fullHeartIcon} />
       )}
       <div className={styles.containerDish}>
         <img className={styles.dishImg} src={img} alt="image of a dish" />

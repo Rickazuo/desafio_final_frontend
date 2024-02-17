@@ -3,12 +3,12 @@ import styles from "./carousel.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import { EffectFade, Navigation } from "swiper/modules";
 import DishCards from "../DishCards/dishCards";
 
 export default function Carousel({ dishes }) {
   return (
-    <div style={{ width: 900 }}>
+    <div className={styles.carouselSwiper}>
       <Swiper
         pagination={{
           clickable: true,
@@ -16,8 +16,9 @@ export default function Carousel({ dishes }) {
         slidesPerView={3}
         navigation={true}
         modules={[Navigation]}
-        className="mySwiper"
+        className={styles.mySwiper}
         loop={true}
+        spaceBetween={50}
       >
         {dishes.map((item) => (
           <SwiperSlide>

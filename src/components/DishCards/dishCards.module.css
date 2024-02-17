@@ -1,7 +1,6 @@
 .main {
   display: flex;
   max-height: 28.875rem;
-  max-width: 19rem;
   padding: 1.5rem;
   flex-direction: column;
   align-items: center;
@@ -18,6 +17,7 @@
   border-radius: 50%;
   max-width: 11rem;
   max-height: 11rem;
+  width: 100%;
 }
 
 .likedButton {
@@ -89,11 +89,18 @@
   justify-content: center;
   align-items: center;
 
-  max-width: 1.5rem;
-  max-height: 1.5rem;
+  width: 100%;
+  height: 100%;
 
   font-size: larger;
   font-weight: 700;
+  border: none;
+}
+
+.buttonQuantity:focus,
+.buttonQuantity:hover {
+  outline: none;
+  border: none;
 }
 
 .buttonDish {
@@ -105,7 +112,24 @@
 
   border-radius: 0.3125rem;
   background: var(--tints-tomato-100);
+  border: none;
 
   color: var(--light-light-100);
   text-align: center;
+}
+
+.buttonDish:focus,
+.buttonDish:hover {
+  outline: none;
+  border: none;
+  background: var(--tints-tomato-200);
+}
+
+@media screen and (max-width: 500px) {
+  .dishImg {
+    max-width: 6rem;
+  }
+  .containerDish {
+    max-width: 10rem;
+  }
 }

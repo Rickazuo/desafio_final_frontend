@@ -1,0 +1,129 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2.625rem;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  filter: brightness(120%);
+}
+
+.detailsOfDish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.9375rem;
+}
+
+.imgDish {
+  max-width: 24.375rem;
+  max-height: 24.3125rem;
+  border-radius: 50%;
+}
+
+.informationOfDish {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.titleDish {
+  color: var(--light-light-300);
+}
+
+.descriptionDish {
+  color: var(--light-light-300);
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 0.875rem;
+
+  color: var(--light-light-300);
+}
+
+.buttonQuantity {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  font-size: larger;
+  font-weight: 700;
+  border: none;
+}
+
+.buttonQuantity:focus,
+.buttonQuantity:hover {
+  outline: none;
+  border: none;
+}
+
+.footerInformation {
+  display: flex;
+}
+
+.addButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--tints-tomato-100);
+  border: none;
+  color: var(--light-light-100);
+}
+
+.addButton:hover,
+.addButton:focus {
+  outline: none;
+  border: none;
+  background-color: var(--tints-tomato-200);
+}
+
+.tagsOfDish {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  gap: 2rem;
+}
+
+.tag {
+  background: var(--dark-dark-1000);
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.6rem;
+  color: var(--light-light-100);
+}
+
+@media screen and (max-width: 850px) {
+  .detailsOfDish {
+    flex-direction: column;
+  }
+
+  .informationOfDish {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tagsOfDish {
+    justify-content: center;
+  }
+
+  .imgDish {
+    max-width: 16rem;
+  }
+}
