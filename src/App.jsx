@@ -1,17 +1,21 @@
-import { useState } from "react";
 import "./App.css";
 import Home from "./pages/Home/home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateAccount from "./pages/CreateAccount/createAccount";
 import LoginAccount from "./pages/LoginAccount/loginAccount";
-import Header from "./components/Header/header";
-import Footer from "./components/Footer/footer";
 
 function App() {
   return (
     <main>
-      <Header />
-      <CreateAccount />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<LoginAccount />} />
+          <Route path="/register" element={<CreateAccount />} />
+          <Route path="/register" element={<CreateAccount />} />
+          <Route path="/register" element={<CreateAccount />} />
+        </Routes>
+      </BrowserRouter>
     </main>
   );
 }

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./dishDetails.module.css";
 import leftArrow from "../../assets/leftArrow.svg";
+import Footer from "../../components/Footer/footer";
+import Header from "../../components/Header/header";
 
 export default function DishDetails() {
   const [quantity, setQuantity] = useState(1);
@@ -19,6 +21,7 @@ export default function DishDetails() {
 
   return (
     <main className={styles.main}>
+      <Header />
       <div className={styles.backButton}>
         <img src={leftArrow} alt="icon left arrow" />
         <h2>Voltar</h2>
@@ -59,6 +62,7 @@ export default function DishDetails() {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

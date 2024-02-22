@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import styles from "./createAccount.module.css";
 import polygon from "../../assets/polygon.svg";
 import AccountModule from "../../components/AccountModule/AccountModule";
+import { createNewUser } from "../../api/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateAccount() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,10 +18,18 @@ export default function CreateAccount() {
     setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+
+    try {
+      const response = await createNewUser(formData);
+      if (response) {
+        navigate("/");
+      }
+    } catch (error) {}
   };
+
   return (
     <main className={styles.main}>
       <div className={styles.container}>

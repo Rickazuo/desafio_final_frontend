@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./loginAccount.module.css";
 import polygon from "../../assets/polygon.svg";
 import AccountModule from "../../components/AccountModule/AccountModule";
+import { Link } from "react-router-dom";
 
 export default function loginAccount() {
   const [formData, setFormData] = useState({
@@ -71,11 +72,11 @@ export default function loginAccount() {
               Entrar
             </button>
           </form>
-          <a href="">
+          <Link to="/register">
             <p className={`${styles.alreadyAccountButton} poppins-100-medium`}>
               Criar uma conta
             </p>
-          </a>
+          </Link>
         </div>
       </AccountModule>
     </main>

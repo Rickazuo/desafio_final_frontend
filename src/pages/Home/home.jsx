@@ -1,7 +1,8 @@
 // import React, { useState } from "react";
 import AddAndEditDish from "../../components/AddAndEditDish/addAndEditDish";
 import Carousel from "../../components/Carousel/carousel";
-import DishDetails from "../../components/DishDetails/dishDetails";
+import Footer from "../../components/Footer/footer";
+import Header from "../../components/Header/header";
 import styles from "./home.module.css";
 
 export default function Home() {
@@ -106,13 +107,14 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+      <Header />
       <div className={styles.carousel}>
-        {/* <Carousel dishes={dishes.meal} />
+        <Carousel dishes={dishes.meal} />
         <Carousel dishes={dishes.dessert} />
-        <Carousel dishes={dishes.drink} /> */}
-        {/* <DishDetails /> */}
+        <Carousel dishes={dishes.drink} />
         <AddAndEditDish />
       </div>
+      <Footer />
     </main>
   );
 }
