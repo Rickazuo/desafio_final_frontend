@@ -3,21 +3,32 @@ import styles from "./loginAccount.module.css";
 import polygon from "../../assets/polygon.svg";
 import AccountModule from "../../components/AccountModule/AccountModule";
 import { Link } from "react-router-dom";
+import { login } from "../../api/auth";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 export default function loginAccount() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const { authenticateLogin } = useAuth();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    try {
+      const response = await login(formData);
+      if (response.data) {
+        authenticateLogin(response.data);
+        navigate("/home");
+      }
+    } catch (error) {}
   };
   return (
     <main className={styles.main}>

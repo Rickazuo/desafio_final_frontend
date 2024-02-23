@@ -23,10 +23,12 @@ export default function Carousel({ dishes }) {
         {dishes.map((item) => (
           <SwiperSlide>
             <DishCards
+              id={item.id}
               title={item.title}
               img={item.img}
               description={item.description}
               liked={item.liked}
+              price={item.price}
             />
           </SwiperSlide>
         ))}
