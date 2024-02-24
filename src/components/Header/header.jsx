@@ -39,9 +39,20 @@ export default function Header() {
             type="text"
             placeholder="Busque por pratos ou ingredientes"
           />
-          <button className={`${styles.buttonMenu} poppins-200-medium`}>
-            Sair
-          </button>
+          <div className={styles.buttonContainer}>
+            <button
+              onClick={() => navigate("/dish/create")}
+              className={`${styles.buttonMenu} poppins-200-medium`}
+            >
+              Novo Prato
+            </button>
+            <button
+              onClick={logout}
+              className={`${styles.buttonMenu} poppins-200-medium`}
+            >
+              Sair
+            </button>
+          </div>
         </div>
       ) : (
         <>

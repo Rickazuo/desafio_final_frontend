@@ -93,6 +93,12 @@
   color: var(--tints-cake-200);
 }
 
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
 @media screen and (max-width: 1300px) {
   .main {
     gap: 0.5rem;
