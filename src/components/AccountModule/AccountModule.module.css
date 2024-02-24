@@ -14,7 +14,15 @@
 
 @media screen and (max-width: 850px) {
   .main {
-    background: var(--dark-dark-500);
+    background: var(--dark-dark-400);
     padding: 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .main {
+    background: var(--dark-dark-400);
+    padding: 2rem;
+    width: 100%;
   }
 }

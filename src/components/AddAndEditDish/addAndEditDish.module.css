@@ -6,6 +6,7 @@
   width: 100%;
   max-width: 70rem;
   gap: 1.5rem;
+  position: relative;
 }
 
 .backButton {
@@ -153,6 +154,29 @@
   color: var(--light-light-400);
 }
 
+.containerButton {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  gap: 2rem;
+}
+
+.deleteButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light-light-100);
+  align-self: end;
+  border: none;
+}
+
+.deleteButton:focus,
+.deleteButton:hover {
+  outline: none;
+  border: none;
+  filter: brightness(80%);
+}
+
 .saveButton {
   display: flex;
   justify-content: center;
@@ -173,6 +197,9 @@
 @media screen and (max-width: 850px) {
   .main {
     padding: 0rem 1.5rem;
+    height: 100%;
+    margin-top: 14rem;
+    margin-bottom: 24rem;
   }
   .fieldsContainer {
     flex-direction: column;
@@ -189,5 +216,21 @@
 
   .selectButton {
     max-width: none;
+  }
+
+  .fieldsOfDish {
+    height: 100%;
+  }
+
+  .saveButton {
+    width: 100%;
+  }
+
+  .deleteButton {
+    width: 100%;
+  }
+
+  .containerButton {
+    justify-content: space-between;
   }
 }

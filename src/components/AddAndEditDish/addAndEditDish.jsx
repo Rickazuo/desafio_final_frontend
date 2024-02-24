@@ -4,7 +4,7 @@ import styles from "./addAndEditDish.module.css";
 import leftArrow from "../../assets/leftArrow.svg";
 import { useAuth } from "../../context/AuthContext";
 import { getDishById } from "../../api/dishes";
-export default function AddAndEditDish({ title, onSubmit }) {
+export default function AddAndEditDish({ title, canDelete, onSubmit }) {
   const [data, setData] = useState({
     name: "",
     description: "",
@@ -143,13 +143,20 @@ export default function AddAndEditDish({ title, onSubmit }) {
             ></textarea>
           </div>
         </div>
+        <div className={styles.containerButton}>
+          {canDelete && (
+            <button className={`${styles.deleteButton}  poppins-100-medium`}>
+              Excluir prato
+            </button>
+          )}
+          <button
+            type="submit"
+            className={`${styles.saveButton} poppins-100-medium`}
+          >
+            Salvar alterações
+          </button>
+        </div>
       </div>
-      <button
-        type="submit"
-        className={`${styles.saveButton} poppins-100-medium`}
-      >
-        Salvar alterações
-      </button>
     </form>
   );
 }

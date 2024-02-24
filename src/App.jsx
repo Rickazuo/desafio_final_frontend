@@ -12,7 +12,7 @@ import CreateDish from "./pages/CreateDish/CreateDish";
 function App() {
   return (
     <AuthProvider>
-      <main>
+      <main className="main">
         <BrowserRouter>
           <Routes>
             <Route

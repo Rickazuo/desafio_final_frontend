@@ -2,6 +2,9 @@ import { createDish } from "../../api/dishes";
 import AddAndEditDish from "../../components/AddAndEditDish/addAndEditDish";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import styles from "./createDish.module.css";
+import Footer from "../../components/Footer/footer";
+import Header from "../../components/Header/header";
 
 export default function CreateDish() {
   const { user } = useAuth();
@@ -16,8 +19,10 @@ export default function CreateDish() {
   };
 
   return (
-    <div>
+    <div className={styles.main}>
+      <Header />
       <AddAndEditDish title="Criar prato" onSubmit={onSubmit} />
+      <Footer />
     </div>
   );
 }

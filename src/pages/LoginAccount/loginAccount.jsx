@@ -37,7 +37,7 @@ export default function loginAccount() {
         <span className="roboto-giant-bold">food explorer</span>
       </div>
       <AccountModule title="Faça login">
-        <div>
+        <div className={styles.containerForm}>
           <form className={styles.form} onSubmit={onSubmit}>
             <div className={styles.divForm}>
               <label

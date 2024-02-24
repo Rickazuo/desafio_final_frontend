@@ -1,6 +1,11 @@
 .main {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100dvw;
   gap: 306px;
+  background: var(--dark-dark-400);
 }
 
 .container {
@@ -8,7 +13,6 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-
   color: var(--light-light-100);
 }
 
@@ -78,5 +82,17 @@
 @media screen and (max-width: 500px) {
   .divForm {
     min-width: 0;
+  }
+  .containerForm {
+    background: var(--dark-dark-400);
+    width: 100%;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .divForm {
+    width: 100%;
   }
 }

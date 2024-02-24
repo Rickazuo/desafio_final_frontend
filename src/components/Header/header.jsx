@@ -61,10 +61,16 @@ export default function Header() {
             className={styles.bannerHeader}
           >
             <img className={styles.icon} src={icon} alt="icon of business" />
-            <span className={`${styles.textBanner} roboto-bigger-bold`}>
-              food explorer
-            </span>
-            {!!user.admin && <span>admin</span>}
+            <div>
+              <span className={`${styles.textBanner} roboto-bigger-bold`}>
+                food explorer
+              </span>
+              {!!user.admin && (
+                <p className={`${styles.adminTag} roboto-smallest-regular`}>
+                  admin
+                </p>
+              )}
+            </div>
           </div>
           <input
             className={styles.searchInput}

@@ -166,3 +166,8 @@
   text-decoration: none;
   text-transform: none;
 }
+
+.main {
+  width: 100%;
+  height: 100%;
+}
