@@ -2,6 +2,14 @@
   display: flex;
   flex-direction: column;
   gap: 2.625rem;
+  width: 100dvw;
+  height: 100%;
+  justify-content: start;
+  background: var(--dark-dark-400);
+}
+
+.containerHeader {
+  height: 5.625rem;
 }
 
 .backButton {
@@ -110,13 +118,22 @@
 }
 
 @media screen and (max-width: 850px) {
+  .main {
+    justify-content: center;
+    max-height: 85dvh;
+  }
+
   .detailsOfDish {
+    justify-content: start;
     flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
   }
 
   .informationOfDish {
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
 
   .tagsOfDish {

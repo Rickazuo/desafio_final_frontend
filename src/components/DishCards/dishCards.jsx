@@ -47,13 +47,13 @@ export default function DishCards({
       )}
       <div className={styles.containerDish}>
         <img
-          onClick={() => navigate(`/dish/${id}`)}
+          onClick={() => navigate(`/dish/dishes/${id}`)}
           className={styles.dishImg}
           src={img}
           alt="image of a dish"
         />
         <p
-          onClick={() => navigate(`/dish/${id}`)}
+          onClick={() => navigate(`/dish/dishes/${id}`)}
           className={`${styles.titleDish} poppins-300-bold `}
         >
           {title}

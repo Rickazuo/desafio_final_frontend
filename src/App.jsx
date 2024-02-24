@@ -41,14 +41,7 @@ function App() {
                 </PrivateRoute>
               }
             />
-            <Route
-              path="/dish/:id"
-              element={
-                <PrivateRoute>
-                  <DishDetails />
-                </PrivateRoute>
-              }
-            />
+            <Route path="/dish/dishes/:id" element={<DishDetails />} />
           </Routes>
         </BrowserRouter>
       </main>

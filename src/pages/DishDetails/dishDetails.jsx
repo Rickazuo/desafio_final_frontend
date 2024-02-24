@@ -4,14 +4,20 @@ import leftArrow from "../../assets/leftArrow.svg";
 import Footer from "../../components/Footer/footer";
 import Header from "../../components/Header/header";
 import { useAuth } from "../../context/AuthContext";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getDishById } from "../../api/dishes";
 
 export default function DishDetails() {
   const { user } = useAuth();
   const [quantity, setQuantity] = useState(1);
-  const [dish, setDish] = useState(null);
+  const [dish, setDish] = useState({
+    name: "Carregando...",
+    description: "",
+    price: "0.00",
+  });
+
   const { id } = useParams();
+  const navigate = useNavigate();
   const handleIncrease = () => {
     setQuantity(quantity + 1);
   };
@@ -41,10 +47,18 @@ export default function DishDetails() {
 
   console.log(dish);
 
+  const formatPrice = (price) => {
+    const numericPrice = parseFloat(price);
+    if (isNaN(numericPrice)) return "00,00";
+
+    return numericPrice.toFixed(2).replace(".", ",");
+  };
+
   return (
     <main className={styles.main}>
       <Header />
-      <div className={styles.backButton}>
+      <div className={styles.containerHeader}></div>
+      <div onClick={() => navigate("/home")} className={styles.backButton}>
         <img src={leftArrow} alt="icon left arrow" />
         <h2>Voltar</h2>
       </div>
@@ -81,7 +95,7 @@ export default function DishDetails() {
               </button>
             </div>
             <button className={styles.addButton}>
-              incluir - R$ {dish.price}
+              incluir - R$ {formatPrice(dish.price)}
             </button>
           </div>
         </div>

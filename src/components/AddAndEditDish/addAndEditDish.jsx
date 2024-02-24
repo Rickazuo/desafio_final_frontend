@@ -96,7 +96,7 @@ export default function AddAndEditDish({ title, canDelete, onSubmit }) {
               <option value="">Selecione uma categoria</option>
               <option value="meal">Refeição</option>
               <option value="dessert">Sobremesa</option>
-              <option value="bebida">Bebida</option>
+              <option value="drink">Bebida</option>
             </select>
           </div>
         </div>
