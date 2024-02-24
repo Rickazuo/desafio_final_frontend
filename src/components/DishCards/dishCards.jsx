@@ -64,26 +64,28 @@ export default function DishCards({
         <p className={`${styles.priceDish} roboto-biggest-regular`}>
           R$ {price}
         </p>
-        <div className={styles.footerDishCard}>
-          <div className={styles.quantity}>
-            <button
-              onClick={handleDecrease}
-              className={`${styles.buttonQuantity}`}
-            >
-              -
-            </button>
-            <span className="roboto-big-bold">{formattedQuantity}</span>
-            <button
-              onClick={handleIncrease}
-              className={`${styles.buttonQuantity}`}
-            >
-              +
+        {!user.admin && (
+          <div className={styles.footerDishCard}>
+            <div className={styles.quantity}>
+              <button
+                onClick={handleDecrease}
+                className={`${styles.buttonQuantity}`}
+              >
+                -
+              </button>
+              <span className="roboto-big-bold">{formattedQuantity}</span>
+              <button
+                onClick={handleIncrease}
+                className={`${styles.buttonQuantity}`}
+              >
+                +
+              </button>
+            </div>
+            <button className={`${styles.buttonDish} poppins-100-medium`}>
+              Incluir
             </button>
           </div>
-          <button className={`${styles.buttonDish} poppins-100-medium`}>
-            Incluir
-          </button>
-        </div>
+        )}
       </div>
     </main>
   );

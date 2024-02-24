@@ -125,11 +125,43 @@
   background: var(--tints-tomato-200);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
+  .main {
+    padding: 0.5rem;
+    max-height: 15rem;
+    height: 100vh;
+  }
+
   .dishImg {
     max-width: 6rem;
   }
   .containerDish {
     max-width: 10rem;
+  }
+
+  .footerDishCard {
+    flex-direction: column;
+  }
+
+  .likedButton {
+    width: 1rem;
+    right: 0;
+    top: 0;
+  }
+
+  .titleDish {
+    font-size: 1.3rem;
+  }
+
+  .priceDish {
+    font-size: 1.5rem;
+  }
+
+  .descriptionDish {
+    display: none;
+  }
+
+  .footerDishCard {
+    margin-bottom: 3rem;
   }
 }
