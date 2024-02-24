@@ -77,16 +77,18 @@ export default function Header() {
             type="text"
             placeholder="Busque por pratos ou ingredientes"
           />
-          <button
-            onClick={() => user.admin && navigate("/dish/create")}
-            className={`${styles.orderButton} poppins-100-medium`}
-          >
-            {!user.admin && <img src={orderIcon} alt="order icon" />}
-            <p className={styles.orderNotification}>N</p>
-            <span className={styles.orderText}>
-              {user.admin ? "Novo prato" : "Pedido"}
-            </span>
-          </button>
+          {!user.admin && (
+            <button
+              onClick={() => user.admin && navigate("/dish/create")}
+              className={`${styles.orderButton} poppins-100-medium`}
+            >
+              {!user.admin && <img src={orderIcon} alt="order icon" />}
+              <p className={styles.orderNotification}>N</p>
+              <span className={styles.orderText}>
+                {user.admin ? "Novo prato" : "Pedido"}
+              </span>
+            </button>
+          )}
           <button onClick={logout} className={styles.signOutButton}>
             <img src={signOut} alt="icon of sign out" />
           </button>

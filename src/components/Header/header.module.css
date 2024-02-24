@@ -11,6 +11,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 2;
 }
 
 .bannerHeader {
@@ -195,6 +196,7 @@
 @media screen and (max-width: 850px) {
   .main {
     background-color: var(--dark-dark-700);
+    justify-content: space-between;
   }
 
   .orderButton {
@@ -238,5 +240,10 @@
     border: none;
     cursor: pointer;
     padding: 0;
+  }
+
+  .bannerHeader {
+    display: flex;
+    justify-self: center;
   }
 }

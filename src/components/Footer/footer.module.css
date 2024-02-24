@@ -8,6 +8,7 @@
   padding: 1.5rem 7.6875rem;
   justify-content: space-between;
   background: var(--dark-dark-600);
+  z-index: 2;
 }
 
 .markBusinessFooter {

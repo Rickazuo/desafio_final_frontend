@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   position: relative;
-  width: 70rem;
-  height: 16.25rem;
+  width: 45rem;
+  height: 10rem;
 
   border-radius: 0.5rem;
   background: var(
@@ -15,6 +15,7 @@
 .imgBanner {
   position: absolute;
   bottom: 0;
+  width: 20rem;
 }
 
 .descriptionBanner {
@@ -49,8 +50,11 @@
 
 @media screen and (max-width: 680px) {
   .main {
-    max-width: 23rem;
-    max-height: 10rem;
+    max-width: 20rem;
+    max-height: 8rem;
+  }
+  .imgBanner {
+    height: 8rem;
   }
 
   .descriptionBanner {
