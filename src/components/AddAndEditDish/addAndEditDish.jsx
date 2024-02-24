@@ -4,7 +4,9 @@ import styles from "./addAndEditDish.module.css";
 import leftArrow from "../../assets/leftArrow.svg";
 import { useAuth } from "../../context/AuthContext";
 import { getDishById } from "../../api/dishes";
+import { deleteDish } from "../../api/dishes";
 export default function AddAndEditDish({ title, canDelete, onSubmit }) {
+  const [file, setFile] = useState(null);
   const [data, setData] = useState({
     name: "",
     description: "",
@@ -12,6 +14,17 @@ export default function AddAndEditDish({ title, canDelete, onSubmit }) {
     price: "",
     ingredients: "",
   });
+
+  const handleDelete = async () => {
+    if (window.confirm("Tem certeza que deseja excluir este prato?")) {
+      try {
+        await deleteDish(user.token, id);
+        navigate("/home");
+      } catch (error) {
+        console.error("Erro ao excluir o prato:", error);
+      }
+    }
+  };
 
   const { user } = useAuth();
   const { id } = useParams();
@@ -25,19 +38,36 @@ export default function AddAndEditDish({ title, canDelete, onSubmit }) {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (
       !data.name ||
       !data.description ||
       !data.category ||
-      !data.price
-      // ||!data.image_url
+      !data.price ||
+      !file // Certifique-se de que um arquivo foi selecionado
     ) {
-      alert("Por favor, preencha todos os campos.");
+      alert("Por favor, preencha todos os campos e selecione uma imagem.");
       return;
     }
-    onSubmit({ ...data, user_id: user.id, image_url: "sushi.jpg" }, id); // TODO this image_url will be changed
+
+    const formData = new FormData();
+    formData.append("name", data.name);
+    formData.append("description", data.description);
+    formData.append("category", data.category);
+    formData.append("price", data.price);
+    formData.append("ingredients", data.ingredients);
+    formData.append("user_id", user.id); // Supondo que o ID do usuário esteja disponível
+    formData.append("image", file); // Adiciona o arquivo de imagem
+
+    // Chame a função onSubmit que foi passada como prop para este componente
+    // Certifique-se de que a implementação de 'onSubmit' no componente pai
+    // pode lidar com 'formData' para realizar o upload via API.
+    onSubmit(formData, id);
   };
 
   useEffect(() => {
@@ -65,10 +95,14 @@ export default function AddAndEditDish({ title, canDelete, onSubmit }) {
       <div className={styles.fieldsOfDish}>
         <div className={styles.fieldsContainer}>
           <div className={styles.fieldImageContainer}>
-            <label className={styles.label} htmlFor="">
+            <label className={styles.label}>
               Imagem do prato
+              <input
+                type="file"
+                onChange={handleFileChange}
+                className={styles.fileInput}
+              />
             </label>
-            <button className={styles.selectButton}> Selecione imagem</button>
           </div>
           <div className={styles.fieldNameContainer}>
             <label className={styles.label} htmlFor="name">
@@ -145,7 +179,10 @@ export default function AddAndEditDish({ title, canDelete, onSubmit }) {
         </div>
         <div className={styles.containerButton}>
           {canDelete && (
-            <button className={`${styles.deleteButton}  poppins-100-medium`}>
+            <button
+              onClick={handleDelete}
+              className={`${styles.deleteButton}  poppins-100-medium`}
+            >
               Excluir prato
             </button>
           )}

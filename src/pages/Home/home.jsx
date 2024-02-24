@@ -26,11 +26,16 @@ export default function Home() {
           acc[categoryKey] = [];
         }
 
+        // Verifica se `image_url` existe e não é null antes de chamar `split`
+        const img = dish.image_url
+          ? dish.image_url.split("/").pop()
+          : "defaultImage.jpg"; // Substitua 'defaultImage.jpg' por uma imagem padrão caso necessário
+
         acc[categoryKey].push({
           id: dish.id,
           title: dish.name,
           description: dish.description,
-          img: dish.image_url.split("/").pop(), // TODO check this logic
+          img, // Use a variável `img` ajustada acima
           liked: dish.liked === 1,
           price: dish.price,
         });

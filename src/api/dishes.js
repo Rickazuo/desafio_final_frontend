@@ -34,5 +34,14 @@ export const createDish = async (token, data) => {
     });
 };
 
+export const deleteDish = async (token, id) => {
+    return axios.delete(`${url}/dish/dishes/${id}`, {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    });
+};
+
+
 
 
