@@ -6,7 +6,7 @@ import LoginAccount from "./pages/LoginAccount/loginAccount";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import { AuthProvider } from "./context/AuthContext";
 import EditDish from "./pages/EditDish/EditDish";
-import DishDetails from "./pages/DishDetails/DishDetails";
+import DishDetails from "./pages/DishDetails/DishDetails.jsx";
 import CreateDish from "./pages/CreateDish/CreateDish";
 
 function App() {
