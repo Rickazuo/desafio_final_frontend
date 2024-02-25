@@ -1,6 +1,6 @@
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { editDish } from "../../api/dishes"; // Importando a função editDish
+import { editDish } from "../../api/dishes";
 import AddAndEditDish from "../../components/AddAndEditDish/addAndEditDish";
 import Header from "../../components/Header/header";
 import Footer from "../../components/Footer/footer";
@@ -12,7 +12,7 @@ export default function EditDish() {
 
   const onSubmit = async (formData, id) => {
     try {
-      const response = await editDish(user.token, id, formData); // Usando a função editDish do módulo api/dishes.js
+      const response = await editDish(user.token, id, formData);
       if (response.status === 200 || response.status === 201) {
         console.log("Prato atualizado com sucesso:", response.data);
         navigate("/home");

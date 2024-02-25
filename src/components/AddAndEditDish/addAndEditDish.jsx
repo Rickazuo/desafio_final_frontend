@@ -49,7 +49,7 @@ export default function AddAndEditDish({ title, canDelete, onSubmit }) {
       !data.description ||
       !data.category ||
       !data.price ||
-      !file // Certifique-se de que um arquivo foi selecionado
+      !file
     ) {
       alert("Por favor, preencha todos os campos e selecione uma imagem.");
       return;
@@ -61,12 +61,9 @@ export default function AddAndEditDish({ title, canDelete, onSubmit }) {
     formData.append("category", data.category);
     formData.append("price", data.price);
     formData.append("ingredients", data.ingredients);
-    formData.append("user_id", user.id); // Supondo que o ID do usuário esteja disponível
-    formData.append("image", file); // Adiciona o arquivo de imagem
+    formData.append("user_id", user.id);
+    formData.append("image", file);
 
-    // Chame a função onSubmit que foi passada como prop para este componente
-    // Certifique-se de que a implementação de 'onSubmit' no componente pai
-    // pode lidar com 'formData' para realizar o upload via API.
     onSubmit(formData, id);
   };
 
