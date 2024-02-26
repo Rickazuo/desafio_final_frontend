@@ -7,7 +7,7 @@ import { useAuth } from "../../context/AuthContext";
 import { useNavigate, useParams } from "react-router-dom";
 import { getDishById } from "../../api/dishes";
 
-export default function DishDetails() {
+export default function DishesDetails() {
   const { user } = useAuth();
   const [quantity, setQuantity] = useState(1);
   const [dish, setDish] = useState({
