@@ -6,7 +6,7 @@ import LoginAccount from "./pages/LoginAccount/loginAccount";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import { AuthProvider } from "./context/AuthContext";
 import EditDish from "./pages/EditDish/EditDish";
-import DishDetails from "./pages/DishDetails/DishDetails.jsx";
+import DishesDetails from "./pages/DishesDetails/DishesDetails";
 import CreateDish from "./pages/CreateDish/CreateDish";
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
                 </PrivateRoute>
               }
             />
-            <Route path="/dish/dishes/:id" element={<DishDetails />} />
+            <Route path="/dish/dishes/:id" element={<DishesDetails />} />
           </Routes>
         </BrowserRouter>
       </main>
