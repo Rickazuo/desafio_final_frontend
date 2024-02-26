@@ -10,11 +10,8 @@ import { useAuth } from "../../context/AuthContext";
 import Banner from "../../components/Banner/banner";
 
 export default function Home() {
-  const [dishesList, setDishesList] = useState({
-    meal: [],
-    dessert: [],
-    drink: [],
-  });
+  const [dishesList, setDishesList] = useState([]);
+  const [searchedDishesList, setSearchedDishesList] = useState([]);
   const { user } = useAuth();
 
   const transformDishes = (dishes) => {
@@ -47,12 +44,27 @@ export default function Home() {
     return transformed;
   };
 
+  const searchDishes = (searchQuery) => {
+    if (!searchQuery.trim()) {
+      setSearchedDishesList(dishesList);
+      return;
+    }
+
+    const lowerCaseQuery = searchQuery.toLowerCase();
+    const filteredDishes = dishesList.filter((dish) =>
+      dish.name.toLowerCase().includes(lowerCaseQuery)
+    );
+    setSearchedDishesList(filteredDishes);
+  };
+
   const getDishesList = async () => {
     try {
       const response = await getAllDishes(user.token);
+      console.log(response);
       if (response) {
-        const dishes = transformDishes(response.data);
+        const dishes = response.data;
         setDishesList(dishes);
+        setSearchedDishesList(dishes);
       }
     } catch (error) {
       console.error("Erro ao buscar pratos:", error);
@@ -63,14 +75,16 @@ export default function Home() {
     getDishesList();
   }, []);
 
+  const filteredDishes = transformDishes(searchedDishesList);
+
   return (
     <main className={styles.main}>
-      <Header />
+      <Header onSearch={searchDishes} />
       <Banner />
       <div className={styles.carousel}>
-        <Carousel dishes={dishesList.meal} />
-        <Carousel dishes={dishesList.dessert} />
-        <Carousel dishes={dishesList.drink} />
+        <Carousel dishes={filteredDishes.meal} />
+        <Carousel dishes={filteredDishes.dessert} />
+        <Carousel dishes={filteredDishes.drink} />
       </div>
       <Footer />
     </main>

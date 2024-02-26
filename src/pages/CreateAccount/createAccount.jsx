@@ -101,7 +101,7 @@ export default function CreateAccount() {
               Criar conta
             </button>
           </form>
-          <a href="">
+          <a href="/">
             <p className={`${styles.alreadyAccountButton} poppins-100-medium`}>
               Já tenho uma conta
             </p>

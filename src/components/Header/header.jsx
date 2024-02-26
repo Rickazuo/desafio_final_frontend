@@ -6,13 +6,19 @@ import orderIcon from "../../assets/orderIcon.svg";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-export default function Header() {
+export default function Header({ onSearch }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const { user } = useAuth();
   const { logout } = useAuth();
   const navigate = useNavigate();
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    onSearch(e.target.value);
   };
 
   return (
@@ -35,9 +41,11 @@ export default function Header() {
             </span>
           </div>
           <input
-            className={styles.searchInputMenu}
+            className={styles.searchInput}
             type="text"
             placeholder="Busque por pratos ou ingredientes"
+            value={searchQuery}
+            onChange={handleSearchChange}
           />
           <div className={styles.buttonContainer}>
             <button
@@ -66,7 +74,6 @@ export default function Header() {
             <span></span>
             <span></span>
           </div>
-
           <div
             onClick={() => navigate("/home")}
             className={styles.bannerHeader}
@@ -87,6 +94,8 @@ export default function Header() {
             className={styles.searchInput}
             type="text"
             placeholder="Busque por pratos ou ingredientes"
+            value={searchQuery}
+            onChange={handleSearchChange}
           />
           {!user.admin && (
             <button
