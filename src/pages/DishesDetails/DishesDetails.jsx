@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./dishDetails.module.css";
+import styles from "./DishesDetails.module.css";
 import leftArrow from "../../assets/leftArrow.svg";
 import Footer from "../../components/Footer/footer";
 import Header from "../../components/Header/header";
